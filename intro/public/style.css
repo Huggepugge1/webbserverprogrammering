@@ -1,0 +1,34 @@
+html, body {
+    background: black;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 200px;
+    color: transparent;
+    background: linear-gradient(to right, blue, purple, red, orange, yellow, lightgreen, cyan, blue);
+    background-size: 2000%;
+    animation: scroll infinite 10000ms;
+    -webkit-background-clip: text;
+}
+
+@keyframes scroll {
+    from {
+        background-position: 0%;
+    } to {
+        background-position: 100%;
+    }
+}
