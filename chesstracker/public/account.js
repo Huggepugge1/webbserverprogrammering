@@ -1,27 +1,24 @@
 const register = () => {
     let credentials = {
-        name: document.querySelector("#username"),
-        password: document.querySelector("#password")
+        username: $("#username").val(),
+        password: $("#password").val()
     }
-    fetch("/register", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: credentials
-    }).then(res => {
-        console.log(res);
-    });
+    $.post("/register", credentials)
+        .then(res => {
+            console.log(res, credentials);
+        });
 };
 
 const login = () => {
     let credentials = {
-        name: document.querySelector("#username").value,
-        password: document.querySelector("#password").value
+        username: $("#username").val(),
+        password: $("#password").val()
     }
-    fetch("/register", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: credentials
-    }).then(res => {
-        console.log(res);
-    });
+    $.post("/login", credentials)
+        .then(res => {
+            window.location.href = "dashboard.html";
+            $.get("/dashboard")
+        }, err => {
+            alert("Invalid credentials!")
+        });
 };

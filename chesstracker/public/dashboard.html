@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <meta name="description" content="Track your chess progress">
+    <script defer src="dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <input id="account-name" placeholder="account name" type="text">
+    <input id="add-account" onclick="addAccount()" value="add account" type="submit">
+    <input id="logout" onclick="logout()" value="logout" type="button">
+    <input id="chess" onclick="getChess()" value="getAccountRatings" type="submit">
+    <div id="ratings"></div>
+</body>
+</html>
